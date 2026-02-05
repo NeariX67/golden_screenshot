@@ -4,6 +4,7 @@ library;
 export 'src/device_box.dart';
 export 'src/font_loader.dart';
 export 'src/fuzzy_comparator.dart';
+export 'src/get_screenshot_app.dart';
 export 'src/screenshot_app.dart';
 export 'src/screenshot_device.dart';
 export 'src/screenshot_devices.dart';

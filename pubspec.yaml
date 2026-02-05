@@ -40,6 +40,7 @@ dependencies:
     sdk: flutter
   flutter_test:
     sdk: flutter
+  get: ^4.7.3
   matcher: ^0.12.16+1
   material_ui: ^1.0.0
   path: ^1.9.1
