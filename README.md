@@ -17,6 +17,40 @@ or create your own custom devices and frames.
 
 This package is also great for regular golden tests, not just for app store screenshots. It provides lots of flexibility and functionality beyond what Flutter has built-in.
 
+## What this fork changed
+
+This fork allows the use of a `GetMaterialApp` from the `Get` package.
+
+Example:
+
+```dart
+  GetMaterialApp home = [...];
+
+  await tester.pumpWidget(
+    GetScreenshotApp.clone(
+      device: device,
+      original: home,
+    ),
+  );
+
+  await beforeScreenshot?.call(tester);
+  await tester.loadAssets();
+
+  await tester.pumpFrames(
+    tester.widget(find.byType(GetScreenshotApp)),
+    const Duration(seconds: 1),
+  );
+
+  await tester.pumpAndSettle();
+
+  await tester.expectScreenshot(
+    device,
+    "Screenshot_Name",
+    finder: find.byType(GetMaterialApp),
+  );
+```
+
+
 ## Getting started
 
 Add `golden_screenshot` to your app as a dev dependency:
