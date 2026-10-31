@@ -190,18 +190,12 @@ class GetScreenshotApp extends GetMaterialApp {
     super.translationsKeys,
     super.unknownRoute,
     super.useInheritedMediaQuery = false,
-    bool? isClosable,
-    bool? isMaximizable,
-    bool? isMinimizable,
     this.themeAnimationStyle = AnimationStyle.noAnimation,
   }) : super(
          builder: (context, child) {
            return ScreenshotConditionalTitlebar(
              title: Text(title),
              device: device,
-             isClosable: isClosable,
-             isMaximizable: isMaximizable,
-             isMinimizable: isMinimizable,
              child:
                  builder?.call(context, child) ??
                  child ??
